@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build && cp -r dist docs",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "rebuild": "vite build && rm -R docs && cp -r dist docs",
+    "git": "git add . && git commit && git push origin main"
   },
   "dependencies": {
     "@line/liff": "^2.22.0",
