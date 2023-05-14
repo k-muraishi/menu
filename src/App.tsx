@@ -3,10 +3,15 @@ import "./App.css";
 import { Card } from "./components/card/card";
 import { useFoodData } from "./hooks/useFoodData";
 import { CreateModal } from "./components/create-modal/create-modal";
+import liff from "@line/liff";
 
 function App() {
   const { data } = useFoodData();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  liff.init({
+    liffId: "1661125627-aBoALjjK", // Use own liffId
+  });
 
   const handleOpenModal = () => {
     setIsModalOpen((prev) => !prev);
